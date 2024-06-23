@@ -33,22 +33,35 @@ link4.addEventListener('click', () => {
 }); 
 
 
-let slideIndex = 0;
 
-function showSlides() {
-    let i;
-    const slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
+
+function changeImage(element) {
+    const mainImg = document.getElementById('main-img');
+    mainImg.src = element.src;
 }
 
-// Run the slideshow function when the DOM content is loaded
-document.addEventListener("DOMContentLoaded", showSlides);
+// Инициализация переменной slideIndex
+let slideIndex = 0;
 
+// Функция для управления слайдами
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Функция для отображения слайдов
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  
+  // Обработка переполнения индекса слайдов
+  if (slideIndex >= slides.length) { slideIndex = 0 }
+  if (slideIndex < 0) { slideIndex = slides.length - 1 }
+  
+  // Скрытие всех слайдов и отображение текущего
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex].style.display = "block";
+}
+
+// Вызов функции для отображения первого слайда
+showSlides();
