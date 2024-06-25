@@ -519,3 +519,7 @@ footer .column > a:hover{
 .next {
     right: 10px;
 }
+
+.large-icon {
+            font-size: 30px;
+        }
