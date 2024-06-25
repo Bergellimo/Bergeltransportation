@@ -223,7 +223,8 @@ section .header{
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    width: 700px;
+    width: 1000px;
+    padding: 20px;
 }
 
 .pricing {
@@ -244,14 +245,28 @@ section .header{
 }
 
 .pricing1 .card1 {
-    padding: 3rem 2rem;
+    padding: 40px;
     background-color: #27272a;
     display: flex;
     flex-direction: row;
     border: 2px solid transparent;
     border-radius: 15px;
     transition: all 0.3s ease;
+    
 }
+
+.content1 li {
+    margin-bottom: 20px;
+    /* Отступ между пунктами списка */
+}
+
+.content1 a:hover {
+    text-decoration: underline;
+    /* Подчеркивание при наведении */
+}
+
+
+
 .pricing1 .card2 {
     padding: 3rem 2rem;
     background-color: #27272a;
