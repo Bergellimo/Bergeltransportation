@@ -523,3 +523,8 @@ footer .column > a:hover{
 .large-icon {
             font-size: 40px;
         }
+
+.highlight {
+    font-size: 22px;
+    font-weight: bold;
+}
